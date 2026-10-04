@@ -1,0 +1,273 @@
+/* ==========================================================================
+   AliStore Hero Section Styles
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  background: radial-gradient(circle at 82% 48%, rgba(219, 234, 254, 0.65) 0%, rgba(240, 247, 255, 0.3) 45%, transparent 75%),
+              linear-gradient(135deg, #ffffff 0%, #f4f8fe 45%, #e8f2fe 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 4.5rem 0 3.5rem 0;
+  overflow: hidden;
+}
+
+/* Small Pill Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(29, 104, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(29, 104, 255, 0.06);
+  width: fit-content;
+}
+
+.hero-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d68ff;
+}
+
+.hero-badge-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+}
+
+/* Hero Heading */
+.hero-title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #0b1329;
+}
+.hero-title-accent {
+  color: #1d68ff;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  line-height: 1.68;
+  color: #4b5563;
+  max-width: 530px;
+}
+
+.hero-brand-name {
+  color: #1d68ff;
+  font-weight: 600;
+}
+
+/* Hero CTA Buttons */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-btn-primary {
+  background-color: #1d68ff !important;
+  border-color: #1d68ff !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  height: 48px !important;
+  padding: 0 28px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  box-shadow: 0 4px 14px rgba(29, 104, 255, 0.32) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+  &:hover,
+  &:focus {
+    background-color: #1558db !important;
+    border-color: #1558db !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 104, 255, 0.42) !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.hero-btn-secondary {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  border-radius: 9999px !important;
+  height: 48px !important;
+  padding: 0 26px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+  &:hover,
+  &:focus {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    color: #1d68ff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Trust Features Row */
+.hero-trust-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-trust-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #edf5ff;
+  border: 1px solid rgba(29, 104, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #1d68ff;
+  transition: all 0.25s ease;
+}
+
+.hero-trust-item:hover .hero-trust-icon-box {
+  background: #e0effe;
+  transform: scale(1.06);
+  border-color: rgba(29, 104, 255, 0.3);
+}
+
+.hero-trust-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-trust-title {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.hero-trust-subtitle {
+  font-weight: 400;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* Right Side Product Showcase */
+.hero-showcase-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-showcase-img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 14px 32px rgba(29, 104, 255, 0.08));
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.015);
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 3rem 0 2.5rem 0;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin: 0 auto 1.25rem auto;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-trust-container {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero-showcase-container {
+    margin-top: 1.5rem;
+  }
+
+  .hero-showcase-img {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 2.25rem 0 2rem 0;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-trust-container {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-trust-item {
+    width: 100%;
+  }
+}

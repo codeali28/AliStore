@@ -1,0 +1,26 @@
+{
+  "name": "alistore-ecommerce-server",
+  "version": "1.0.0",
+  "description": "AliStore E-Commerce Server - CoDev Training Program",
+
+  "license": "ISC",
+  "author": "M.Ali",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "seed": "node config/seed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.11.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.10.1",
+    "multer": "^2.4.0",
+    "nodemon": "^3.1.14"
+  }
+}
