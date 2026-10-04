@@ -2,14 +2,13 @@
   "name": "alistore-ecommerce-server",
   "version": "1.0.0",
   "description": "AliStore E-Commerce Server - CoDev Training Program",
-
   "license": "ISC",
   "author": "M.Ali",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "seed": "node config/seed.js"
   },
   "dependencies": {
