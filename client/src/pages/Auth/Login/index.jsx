@@ -32,7 +32,7 @@ const Login = () => {
 
     setIsProcessing(true)
 
-    axios.post("http://localhost:8000/api/login", { email, password })
+    axios.post("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/login", { email, password })
       .then((res) => {
         const { status, data } = res
         if (status === 200) {

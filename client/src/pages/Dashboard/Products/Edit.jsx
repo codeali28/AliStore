@@ -30,7 +30,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    axios.get(`http://localhost:8000/api/products/${id}`)
+    axios.get(`https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products/${id}`)
       .then(res => {
         if (res.data && res.data.product) {
           const p = res.data.product
@@ -97,7 +97,7 @@ const EditProduct = () => {
     setIsProcessing(true)
     const token = localStorage.getItem("jwt")
 
-    axios.patch(`http://localhost:8000/api/products/${id}`, formData, {
+    axios.patch(`https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products/${id}`, formData, {
       headers: {
         Authorization: `Bearer ${token}`
       }

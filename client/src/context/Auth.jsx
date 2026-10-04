@@ -17,7 +17,7 @@ const AuthContext = ({ children }) => {
             return
         }
 
-        axios.get("http://localhost:8000/api/user", {
+        axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/user", {
             headers: { Authorization: `Bearer ${jwt}` }
         })
             .then((res) => {

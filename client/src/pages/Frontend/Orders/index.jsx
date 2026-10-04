@@ -32,7 +32,7 @@ const Orders = () => {
     const token = localStorage.getItem("jwt")
     setIsLoading(true)
 
-    axios.get("http://localhost:8000/api/orders/my-orders", {
+    axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/orders/my-orders", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {

@@ -35,7 +35,7 @@ const AdminLogin = () => {
         setErrorMessage("")
 
         // Post login with isAdminLogin: true flag
-        axios.post("http://localhost:8000/api/login", { email, password, isAdminLogin: true })
+        axios.post("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/login", { email, password, isAdminLogin: true })
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
