@@ -30,8 +30,8 @@ const AdminHome = () => {
     setIsLoading(true)
 
     Promise.all([
-      axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products"),
-      axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/orders/all", {
+      axios.get(`${import.meta.env.VITE_API_URL}/api/products`),
+      axios.get(`${import.meta.env.VITE_API_URL}/api/orders/all`, {
         headers: { Authorization: `Bearer ${token}` }
       }).catch(() => ({ data: { orders: [] } }))
     ])

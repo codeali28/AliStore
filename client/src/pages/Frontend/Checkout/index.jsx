@@ -86,7 +86,7 @@ const Checkout = () => {
       totalPrice: cartTotal
     }
 
-    axios.post("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/orders", orderPayload, {
+    axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, orderPayload, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {

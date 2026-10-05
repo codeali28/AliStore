@@ -76,7 +76,7 @@ const AddProduct = () => {
     setIsProcessing(true)
     const token = localStorage.getItem("jwt")
 
-    axios.post("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products", formData, {
+    axios.post(`${import.meta.env.VITE_API_URL}/api/products`, formData, {
       headers: {
         Authorization: `Bearer ${token}`
       }

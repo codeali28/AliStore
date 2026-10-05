@@ -26,7 +26,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        axios.get(`https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products/${id}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
             .then(res => {
                 if (res.data && res.data.product) {
                     setProduct(res.data.product)

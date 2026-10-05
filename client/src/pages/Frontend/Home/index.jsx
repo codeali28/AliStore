@@ -25,7 +25,7 @@ const Home = () => {
 
   const fetchProducts = () => {
     setIsLoading(true)
-    axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products")
+    axios.get(`${import.meta.env.VITE_API_URL}/api/products`)
       .then(res => {
         if (res.data && res.data.products) {
           setProducts(res.data.products)

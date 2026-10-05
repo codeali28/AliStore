@@ -1,14 +1,24 @@
-const dns = require("dns")
-dns.setServers(["8.8.8.8", "8.8.4.4"])
+try {
+  const dns = require("dns")
+  dns.setServers(["8.8.8.8", "8.8.4.4"])
+} catch (e) {
+  // DNS override ignored in environments that restrict it
+}
 
 const mongoose = require("mongoose")
 
-const connentDB = () => {
+let isConnected = false
+
+const connentDB = async () => {
+  if (isConnected || mongoose.connection.readyState >= 1) {
+    return mongoose.connection
+  }
+
   const uri = process.env.MONGODB_URI
 
   if (!uri) {
     console.error("FATAL ERROR: MONGODB_URI is not set in environment variables.")
-    process.exit(1)
+    return null
   }
 
   // Explicit safety check to ensure target is ecommerce_db
@@ -16,18 +26,24 @@ const connentDB = () => {
     console.warn("WARNING: MONGODB_URI does not explicitly include 'ecommerce_db'. Ensuring safe connection.")
   }
 
-  mongoose.connect(uri, {
-    dbName: "ecommerce_db"
-  })
-    .then((conn) => {
-      console.log(`MongoDB connected successfully to database: ${conn.connection.name || "ecommerce_db"}`)
+  try {
+    const conn = await mongoose.connect(uri, {
+      dbName: "ecommerce_db"
+    })
+    isConnected = true
+    console.log(`MongoDB connected successfully to database: ${conn.connection.name || "ecommerce_db"}`)
+    try {
       const { seedInitialData } = require("./seed")
       seedInitialData()
-    })
-    .catch(error => {
-      console.log("MongoDB connection failed.")
-      console.error(error)
-    })
+    } catch (seedErr) {
+      console.warn("Seed warning:", seedErr.message)
+    }
+    return conn
+  } catch (error) {
+    console.log("MongoDB connection failed.")
+    console.error(error)
+    return null
+  }
 }
 
 module.exports = { connentDB }

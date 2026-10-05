@@ -40,7 +40,7 @@ const Register = () => {
 
     setIsProcessing(true)
 
-    axios.post("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/register", userPayload)
+    axios.post(`${import.meta.env.VITE_API_URL}/api/register`, userPayload)
       .then((res) => {
         const { status, data } = res
         if (status === 201) {

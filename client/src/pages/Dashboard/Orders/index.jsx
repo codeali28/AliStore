@@ -15,7 +15,7 @@ const AdminOrders = () => {
     setIsLoading(true)
     const token = localStorage.getItem("jwt")
 
-    axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/orders/all", {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/orders/all`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
@@ -39,7 +39,7 @@ const AdminOrders = () => {
   const handleStatusChange = (orderId, newStatus) => {
     const token = localStorage.getItem("jwt")
 
-    axios.patch(`https://ali-store-r77xam98c-ali-projects12.vercel.app/api/orders/${orderId}/status`, { status: newStatus }, {
+    axios.patch(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`, { status: newStatus }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {

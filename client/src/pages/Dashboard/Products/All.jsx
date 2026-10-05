@@ -21,7 +21,7 @@ const AllProducts = () => {
 
   const fetchProducts = () => {
     setIsLoading(true)
-    axios.get("https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products")
+    axios.get(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((res) => {
         const { status, data } = res
         if (status === 200 && data.products) {
@@ -47,7 +47,7 @@ const AllProducts = () => {
     const prodId = product.id || product._id
     const token = localStorage.getItem("jwt")
 
-    axios.delete(`https://ali-store-r77xam98c-ali-projects12.vercel.app/api/products/${prodId}`, {
+    axios.delete(`${import.meta.env.VITE_API_URL}/api/products/${prodId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => {
